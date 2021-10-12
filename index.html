@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MEDP 331 Homework 4</title>
+        <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+        <style type="text/css">
+
+            body {
+                text-align: center;
+                font-family: 'Space Mono', monospace;
+                background-color: #C9E29F;
+            }
+
+            #choice {
+                font-weight: bold;
+            }
+
+            #comment {
+                color: #2A4D04;
+            }
+            
+        </style>
+        <script>
+
+            // user chooses from dropdown option
+            function getOption() {
+                var obj = document.getElementById("mySelect");
+                document.getElementById("choice").innerHTML = "You have ordered " + 
+                obj.options[obj.selectedIndex].text + ".";
+                
+
+                // HAHA CODE FUNNY
+
+
+                if(obj.options[obj.selectedIndex].text === "Burger")
+                {
+                    console.log('Burger chosen.')
+                    document.getElementById("counter").innerHTML = "<img src='images/burger.png'>";
+                    document.getElementById("message").innerHTML = "Here is your burger!";
+                    document.getElementById("comment").innerHTML = "ooh, that's a big one.";
+                }
+
+                if(obj.options[obj.selectedIndex].text === "Fries")
+                {
+                    console.log('Fries chosen.')
+                    document.getElementById("counter").innerHTML = "<img src='images/fries.png'>";
+                    document.getElementById("message").innerHTML = "Here is your fries!";
+                    document.getElementById("comment").innerHTML = "perfectly crisp";
+                }
+
+                if(obj.options[obj.selectedIndex].text === "Chicken Nuggies")
+                {
+                    console.log('Chicken nuggies chosen.')
+                    document.getElementById("counter").innerHTML = "<img src='images/nuggies.png'>";
+                    document.getElementById("message").innerHTML = "Here is your chicken nuggies!";
+                    document.getElementById("comment").innerHTML = "mmm, nuggies";
+                }
+
+                if(obj.options[obj.selectedIndex].text === "Soda")
+                {
+                    console.log('Soda chosen.')
+                    document.getElementById("counter").innerHTML = "<img src='images/soda.png'>";
+                    document.getElementById("message").innerHTML = "Here is your soda!";
+                    document.getElementById("comment").innerHTML = "fizz fizz";
+                }
+
+                if(obj.options[obj.selectedIndex].text === "Everything")
+                {
+                    console.log('Everything chosen.')
+                    document.getElementById("counter").innerHTML = "<img src='images/everything.png'>";
+                    document.getElementById("message").innerHTML = "Here is everything!";
+                    document.getElementById("comment").innerHTML = "you made the owner very happy :)";
+                }
+
+                if(obj.options[obj.selectedIndex].text === "Nothing")
+                {
+                    console.log('Nothing chosen.')
+                    document.getElementById("counter").innerHTML = "<img src='images/cashier_sad.png'>";
+                    document.getElementById("message").innerHTML = "Here is nothing.";
+                    document.getElementById("comment").innerHTML = "aw.";
+                }
+            }
+            </script>
+    </head>
+
+    <body>
+        <form>
+            Hi! What would you like to order?
+            <select id="mySelect">
+              <option>Burger</option>
+              <option>Fries</option>
+              <option>Chicken Nuggies</option>
+              <option>Soda</option>
+              <option>Everything</option>
+              <option>Nothing</option>
+            </select>
+            <br><br>
+            <input type="button" onclick="getOption()" value="Make my order!">
+        </form>
+
+        <p id="choice"></p>
+
+        <div id="counter">
+            <img src='images/cashier_happy.png'>
+        </div>
+            
+        <p id="message"></p>
+        <p id="comment"></p>
+
+    </body>
+</html>
+
